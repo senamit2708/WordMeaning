@@ -46,7 +46,31 @@ public class WordContentProvider extends ContentProvider {
     @Nullable
     @Override
     public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, @Nullable String[] selectionArgs, @Nullable String sortOrder) {
-        return null;
+
+        db= mWordDbHelper.getReadableDatabase();
+        Log.i(LOG_TAG, "inside the query method of provider");
+        int match = mUriMatcher.match(uri);
+        Cursor retCursor = null;
+
+        switch (match){
+            case WORD_LIST:
+                Log.i(LOG_TAG, "inside the word list table switch 1 block ");
+              retCursor =  db.query(WordListDiary.TABLE_NAME,
+                        projection,
+                        selection,
+                        selectionArgs,
+                        null,
+                        null,
+                        sortOrder);
+              Log.i(LOG_TAG, "the cursor value is "+retCursor);
+                break;
+            case WORD_LIST_ITEM:
+                break;
+            default:
+                throw new android.database.SQLException("uri is bad" + uri);
+        }
+        retCursor.setNotificationUri(getContext().getContentResolver(), uri);
+        return retCursor;
     }
 
     @Nullable
@@ -81,6 +105,7 @@ public class WordContentProvider extends ContentProvider {
                 Log.i(LOG_TAG, "inside the default block ");
                 throw new android.database.SQLException("the uri is bad"+uri);
         }
+        getContext().getContentResolver().notifyChange(uri, null);
         return retUri;
     }
 

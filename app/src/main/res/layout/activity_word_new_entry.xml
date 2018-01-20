@@ -5,34 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.senamit.wordmeaning.WordNewEntry"
-    tools:layout_editor_absoluteY="81dp">
+    tools:layout_editor_absoluteY="25dp">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="18dp"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="13dp"
         android:text="Enter Word"
-        app:layout_constraintBottom_toTopOf="@+id/edtWordName"
-        app:layout_constraintStart_toStartOf="@+id/edtWordName" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar" />
 
     <EditText
         android:id="@+id/edtWordName"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="105dp"
+        android:layout_marginTop="17dp"
         android:hint="Word name"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="33dp"
-        android:layout_marginStart="39dp"
+        android:layout_marginBottom="19dp"
+        android:layout_marginStart="31dp"
         android:text="Enter Description"
         app:layout_constraintBottom_toTopOf="@+id/edtWordDescription"
         app:layout_constraintStart_toStartOf="parent" />
@@ -41,17 +59,19 @@
         android:id="@+id/edtWordDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="216dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginTop="62dp"
         android:hint="Word name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtWordName" />
 
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="129dp"
+        android:layout_marginTop="68dp"
         android:text="Save"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="350dp" />
+        app:layout_constraintStart_toStartOf="@+id/edtWordDescription"
+        app:layout_constraintTop_toBottomOf="@+id/edtWordDescription" />
 </android.support.constraint.ConstraintLayout>

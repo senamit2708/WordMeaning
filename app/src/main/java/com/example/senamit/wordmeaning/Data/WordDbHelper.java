@@ -12,7 +12,7 @@ import  com.example.senamit.wordmeaning.Data.WordContract.*;
 public class WordDbHelper extends SQLiteOpenHelper  {
 
     public static final String DATABASE_NAME = "WordTracker";
-    public static final int DATABASE_VERSION=3;
+    public static final int DATABASE_VERSION=4;
 
 
     public WordDbHelper(Context context) {
