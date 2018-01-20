@@ -4,14 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.senamit.wordmeaning.MainActivity">
 
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/recyclerView"
-        android:orientation="vertical"/>
+        android:orientation="vertical" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/floatingbtnSave"
+        android:layout_weight="1"
+        android:clickable="true"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:id="@+id/floatingbtnSave"-->
+        <!--android:layout_width="284dp"-->
+        <!--android:layout_height="wrap_content"-->
+
+        <!--android:layout_marginRight="16dp"-->
+        <!--android:clickable="true"-->
+        <!--android:src= />-->
 
 
 </LinearLayout>

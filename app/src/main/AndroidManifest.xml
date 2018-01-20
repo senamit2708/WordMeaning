@@ -16,6 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".WordNewEntry"></activity>
+
+        <provider
+            android:authorities="com.example.senamit.wordmeaning"
+            android:name="com.example.senamit.wordmeaning.Data.WordContentProvider"
+            android:exported="false"/>
+
+
     </application>
+
 
 </manifest>
