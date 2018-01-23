@@ -36,7 +36,6 @@ public class WordDbHelper extends SQLiteOpenHelper  {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
         db.execSQL(SQL_DELETE_ENTRIES);
         onCreate(db);
     }

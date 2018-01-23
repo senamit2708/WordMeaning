@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                            null,
                            null,
                            null,
-                           null);
+                           WordContract.WordListDiary._ID+" DESC");
                }catch (Exception e){
                    Log.i(LOG_TAG, "Unable to load the data from table");
                }
