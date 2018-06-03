@@ -18,6 +18,7 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp">
 
+
             <TextView
                 android:layout_centerVertical="true"
                 android:layout_height="wrap_content"
